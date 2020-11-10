@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfree</title>
+    <link rel="stylesheet" href="../static/libs/layui-v2.5.6/layui/css/layui.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/perfree.css">
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+
+        <!--header部分-->
+      <div class="layui-header f-header">
+
+        <ul class="layui-nav layui-layout-left left-nav f-nav">
+            <li class="layui-nav-item" lay-unselect>
+              <a href="javascript:;" title="收缩菜单" class="f-switch-side-btn f-switch-btn-on"><i class="layui-icon layui-icon-shrink-right"></i></a>
+              <a href="javascript:;" title="展开菜单" class="f-switch-side-btn f-switch-btn-off" style="display: none;"><i class="layui-icon layui-icon-spread-left"></i></a>
+            </li>
+            <li class="layui-nav-item" lay-unselect><a href="javascript:;" class="f-refresh-btn" title="刷新"><i class="layui-icon layui-icon-refresh"></i></a></li>
+        </ul>
+
+        <ul class="layui-nav layui-layout-right header-right f-nav">
+            <li class="layui-nav-item" lay-unselect><a href="javascript:;" title="主题" class="f-theme-btn"><i class="layui-icon layui-icon-theme"></i></a></li>
+            <li class="layui-nav-item" lay-unselect>
+              <a href="javascript:;" class="f-screen-full-btn" title="全屏/退出全屏">
+                <i class="layui-icon layui-icon-screen-full f-screen-full-btn-icon"></i>
+                <i class="layui-icon layui-icon-screen-restore f-exit-full-btn-icon"></i>
+              </a>
+            </li>
+          <li class="layui-nav-item" lay-unselect>
+            <a href="javascript:;">
+              <img src="https://secure.gravatar.com/avatar/635e66d06c6c1ed34903fc3afca02dfa?s=65&r=G&d=" class="layui-nav-img">
+              Perfree
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="">基本资料</a></dd>
+              <dd><a href="">安全设置</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="layui-side f-side">
+        <div class="layui-logo f-logo-text">
+          Perfree
+        </div>
+        <div class="layui-logo f-logo-img">
+          <img src="https://secure.gravatar.com/avatar/635e66d06c6c1ed34903fc3afca02dfa?s=65&r=G&d=">
+        </div>
+        <div class="layui-side-scroll">
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree f-side-nav" lay-filter="side">
+            <li class="layui-nav-item f-nav-item"><a href="javascript:;" url="./home.html"><i class="layui-icon layui-icon-home"></i><span class="f-nav-content">主页</span></a></li>
+            <li class="layui-nav-item f-nav-item">
+              <a class="" href="javascript:;"><i class="layui-icon layui-icon-read"></i><span class="f-nav-content">文章</span></a>
+              <dl class="layui-nav-child">
+                <dd class="f-child-side"><a href="javascript:;" url="./test.html">列表一</a></dd>
+                <dd class="f-child-side"><a href="javascript:;">列表二</a></dd>
+                <dd class="f-child-side"><a href="javascript:;">列表三</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item f-nav-item">
+              <a href="javascript:;"><i class="layui-icon layui-icon-note"></i><span class="f-nav-content">标签</span></a>
+              <dl class="layui-nav-child">
+                <dd class="f-child-side"><a href="javascript:;">列表一</a></dd>
+                <dd class="f-child-side"><a href="javascript:;">列表二</a></dd>
+                <dd class="f-child-side"><a href="">超链接</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item f-nav-item"><a href="javascript:;" url="./home.html"><i class="layui-icon layui-icon-set-sm"></i><span class="f-nav-content">设置</span></a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="f-iframe-box">
+          <iframe src="./home.html" frameborder="0" scrolling="no" id="iframe" onload="setIframeHeight(this)" width="100%"></iframe>
+        </div>
+      </div>
+      
+
+    
+    </div>
+
+    <div id="theme-list">
+      <ul class="theme-list">
+      </ul>
+    </div>
+
+    <script id="themeTpl" type="text/html">
+      {{#  layui.each(d, function(index, item){ }}
+        <li class="theme" id="{{ item.id }}">
+          <div class="theme-leftLogo" style="background: {{ item.leftLogo }}" bg="{{ item.leftLogo }}" color="{{ item.logoColor }}" borderColor="{{ item.logoBoderColor }}"></div>
+          <div class="theme-leftSide" style="background: {{ item.leftSide }}" bg="{{ item.leftSide }}" color="{{ item.sideColor }}"></div>
+          <div class="theme-header" style="background: {{ item.header }}" bg="{{ item.header }}" color="{{ item.headerColor }}"></div>
+        </li>
+      {{#  }); }}
+    </script>
+
+    <script src="../static/libs/jquery/jquery-3.5.1.js"></script>
+    <script src="../static/libs/layui-v2.5.6/layui/layui.all.js"></script>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>

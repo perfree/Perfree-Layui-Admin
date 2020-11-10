@@ -1,0 +1,30 @@
+/** 字体颜色 */
+.f-c-white{
+    color: #ffffff;
+}
+.f-c-black{
+    color: #000000;
+}
+
+.f-c-default{
+    color:#0c0c0cde;
+}
+
+
+/**  背景颜色 */
+.f-g-white{
+    background-color: white;
+}
+
+.f-g-default{
+    background-color: #1d1f26;
+}
+/** 边框颜色 */
+.f-b-default{
+    border-color: #e8e8e8;
+}
+
+.f-b-black{
+    border-color: rgba(0,0,0,.87);
+}
+
